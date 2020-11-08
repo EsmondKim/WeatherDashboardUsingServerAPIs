@@ -1,0 +1,24 @@
+#header {
+    color: white;
+    text-align: center;
+    font-family: "Goldman", cursive;
+}
+
+aside {
+    background-color: gray;
+    border-color: blue
+}
+
+section {
+    border-color: blue
+}
+
+.search input[type=text] {
+    float: right;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+ 
