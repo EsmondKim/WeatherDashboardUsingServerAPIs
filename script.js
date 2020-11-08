@@ -18,6 +18,8 @@ $(document).ready(function() {
     console.log(queryCity);
     window.localStorage.setItem("citySearched", JSON.stringify($("#searchText").val()))
     
+    $("#citiesList").append('<li class="list-group-item">' + queryCity + "</li>")
+
     $.ajax({
         url: queryURLCurrentWthr,
         method: "GET"
@@ -26,11 +28,13 @@ $(document).ready(function() {
       })
     }
 
+
+
     function getFromLocalStorage() {
         let lastSearched = JSON.parse(window.localStorage.getItem("citySearched"));
         $(':input').removeAttr('placeholder');
         $("#searchText").val(lastSearched);
-        alert(lastSearched);
+        //alert(lastSearched);
     }
     getFromLocalStorage()
 
