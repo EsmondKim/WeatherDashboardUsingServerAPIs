@@ -2,6 +2,10 @@
 
 
 
+
+
+
+
 Deployed website:
 [Here is a link to the deployed website](https://esmondkim.github.io/WorkDayScheduler/) 
 
@@ -47,3 +51,8 @@ You are required to submit the following for review:
 * The URL of the deployed application.
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+
+Credits:
+The enter key press listener function was learned from this website:
+https://howtodoinjava.com/jquery/jquery-detect-if-enter-key-is-pressed/
+Accessed: Sunday November 8, 2020
