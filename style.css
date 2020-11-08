@@ -4,13 +4,15 @@
     font-family: "Goldman", cursive;
 }
 
-aside {
+.aside {
     background-color: gray;
-    border-color: blue
+    border-style: solid;
+    border-color: blue;
 }
 
-section {
-    border-color: blue
+.section {
+    border-style: solid;
+    border-color: blue;
 }
 
 .search input[type=text] {
