@@ -1,11 +1,7 @@
 # WeatherDashboardUsingServerAPIs
 
 
-
-
-
-
-
+0
 Deployed website:
 [Here is a link to the deployed website](https://esmondkim.github.io/WorkDayScheduler/) 
 
