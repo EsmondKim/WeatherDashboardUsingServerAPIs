@@ -8,11 +8,13 @@
     background-color: gray;
     border-style: solid;
     border-color: blue;
+    border-radius: 25px;
 }
 
 .section {
     border-style: solid;
     border-color: blue;
+    border-radius: 25px;
 }
 
 .search input[type=text] {
