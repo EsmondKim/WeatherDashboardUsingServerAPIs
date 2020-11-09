@@ -1,12 +1,14 @@
 # WeatherDashboardUsingServerAPIs
 
+This is weather app that gives users the current weather and UV Index conditions as well as a five day forecast.
+The site utilizes a weather API to provide real time information.
+Users can search for cities, and the code automatically takes the search value and adds it to the API's queryURL.
 
-0
 Deployed website:
-[Here is a link to the deployed website](https://esmondkim.github.io/WorkDayScheduler/) 
+[Here is a link to the deployed website](https://esmondkim.github.io/WeatherDashboardUsingServerAPIs/) 
 
 Sceenshots
-![And a screenshot](/Assets/schedulerscreenshot.jpg)
+![And a screenshot](/Assets/screenshot.jpg)
 
 This is the User Story and Acceptance Criteria for the site.
 

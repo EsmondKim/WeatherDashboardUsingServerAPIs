@@ -70,6 +70,13 @@ $(document).ready(function() {
 
 
 
+
+
+      
+//WHEN I view future weather conditions for that city
+//THEN I am presented with a 5-day forecast that displays the date, 
+//an icon representation of weather conditions, the temperature, and the humidity
+
       
             })
 
