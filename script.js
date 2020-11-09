@@ -68,19 +68,27 @@ $(document).ready(function() {
         $("#uvIndicator").css("background-color", "red")
       }
 
-
-
-
-
-      
-//WHEN I view future weather conditions for that city
-//THEN I am presented with a 5-day forecast that displays the date, 
+      let queryURLDaily = "https://api.openweathermap.org/data/2.5/onecall?lat=" + uvLat + "&lon=" + uvLon + "&exclude=current,minutely,hourly,alerts&appid=87665d60f93b269a6c1aa2b881ea7347";
+     
+      $.ajax({
+        url: queryURLDaily,
+        method: "GET"
+      }).then(function(response) {
+      console.log(response); 
+      let tempF = (response.main.temp - 273.15) * 1.80 + 32;
+      let humidity = response.main.humidity;
+      let wind = response.wind.speed;
+      $("#dayOne").text( );
+      $("#dayTwo").text( );
+      $("#dayThree").text( );
+      $("#dayFour").text( ); 
+      $("#dayFive").text( );
+ //displays the date, 
 //an icon representation of weather conditions, the temperature, and the humidity
+        })
 
-      
+
             })
-
-
         })  
     }
 
