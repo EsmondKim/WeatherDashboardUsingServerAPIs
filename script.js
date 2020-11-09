@@ -32,20 +32,21 @@ $(document).ready(function() {
         method: "GET"
       }).then(function(response) {
       console.log(response); 
-      console.log(response.name)
-      console.log(response.main.temp);
-      console.log(response.main.humidity);
    
       let tempF = (response.main.temp - 273.15) * 1.80 + 32;
       let humidity = response.main.humidity;
+      let wind = response.wind.speed;
+      let uv = response.
       $("#cityName").text(response.name);
       $("#cityTime").text(moment().format("MMM Do YY"));
       $("#cityTemp").text(tempF.toFixed(0) + " degrees Farenheit");
       $("#cityHumidity").text("Humidity: " + humidity); 
+      $("#cityWind").text("Wind Speed: " + wind);
+      $("#uvIndex").text("UV Index: " + uv);  
       })
   
 
-    //the humidity, the wind speed, and the UV index
+    // and the UV index
     //an icon representation of weather conditions,
 
     }
