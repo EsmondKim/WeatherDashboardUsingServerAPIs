@@ -22,7 +22,7 @@ $(document).ready(function() {
     function getWeather() {
     let queryCity = $("#searchText").val(); 
     let queryURLCurrentWthr = "https://api.openweathermap.org/data/2.5/weather?q=" + queryCity + "&appid=87665d60f93b269a6c1aa2b881ea7347";
-    console.log(queryCity);
+    //console.log(queryCity);
     window.localStorage.setItem("citySearched", JSON.stringify($("#searchText").val()))
     
     $("#citiesList").append('<li class="list-group-item">' + queryCity + "</li>")
@@ -32,17 +32,19 @@ $(document).ready(function() {
         method: "GET"
       }).then(function(response) {
       console.log(response); 
-      })
-  
-    $("#cityCard").text(queryCity);
+      console.log(response.name)
+      console.log(response.main.temp);
+   
+    let tempF = (response.main.temp - 273.15) * 1.80 + 32;
+    $("#cityCard").text(response.name);
+    $("#cityResults").append('<li class="list-group-item">' + moment().format("MMM Do YY") + "</li>")
+    $("#cityResults").append('<li class="list-group-item">' + tempF.toFixed(0) + " degrees Farenheit</li>")
+    })
 
-  //$("#").append('<li class="">' +  + "</li>")
 
-  //THEN I am presented with the city name, 
-  //the date, 
+   //the temperature, the humidity, the wind speed, and the UV index
   //an icon representation of weather conditions, 
-  //the temperature, the humidity, the wind speed, and the UV index
-
+  
       
     }
 
