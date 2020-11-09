@@ -34,19 +34,25 @@ $(document).ready(function() {
       console.log(response); 
       console.log(response.name)
       console.log(response.main.temp);
+      console.log(response.main.humidity);
    
-    let tempF = (response.main.temp - 273.15) * 1.80 + 32;
-    $("#cityCard").text(response.name);
-    $("#cityResults").append('<li class="list-group-item">' + moment().format("MMM Do YY") + "</li>")
-    $("#cityResults").append('<li class="list-group-item">' + tempF.toFixed(0) + " degrees Farenheit</li>")
-    })
-
-
-   //the temperature, the humidity, the wind speed, and the UV index
-  //an icon representation of weather conditions, 
+      let tempF = (response.main.temp - 273.15) * 1.80 + 32;
+      let humidity = response.main.humidity;
+      $("#cityName").text(response.name);
+      $("#cityTime").text(moment().format("MMM Do YY"));
+      $("#cityTemp").text(tempF.toFixed(0) + " degrees Farenheit");
+      $("#cityHumidity").text("Humidity: " + humidity); 
+      })
   
-      
+
+    //the humidity, the wind speed, and the UV index
+    //an icon representation of weather conditions,
+
     }
+
+
+      
+    
 
   
 
