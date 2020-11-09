@@ -33,7 +33,7 @@ $(document).ready(function() {
       let tempF = (response.main.temp - 273.15) * 1.80 + 32;
       let humidity = response.main.humidity;
       let wind = response.wind.speed;
-      $("#cityName").text(response.name);
+      $("#cityName").text("Currently: " + response.name);
       $("#cityTime").text(moment().format("MMM Do YY"));
       $("#cityTemp").text(tempF.toFixed(0) + " degrees Farenheit");
       $("#cityHumidity").text("Humidity: " + humidity); 
@@ -44,34 +44,37 @@ $(document).ready(function() {
       console.log(uvLat);
       console.log(uvLon);
       let queryURLUV = "https://api.openweathermap.org/data/2.5/uvi?lat=" + uvLat + "&lon=" + uvLon + "&appid=87665d60f93b269a6c1aa2b881ea7347";
-
+     
       $.ajax({
         url: queryURLUV,
         method: "GET"
       }).then(function(response) {
       console.log(response); 
-   
       
-      })
+      if (response.value < 5) {
+        //favorable
+        $("#uvIndicator").text("Favorable UV");
+        $("#uvIndicator").css("background-color", "green")
+      }
+      if (response.value > 5 && response.value < 8) {
+        //moderate
+        $("#uvIndicator").text("Moderate UV");
+        $("#uvIndicator").css("background-color", "yellow")
+      }
+
+      if (response.value > 8 && response.value < 10) {
+        //severe
+        $("#uvIndicator").text("Severe UV");
+        $("#uvIndicator").css("background-color", "red")
+      }
 
 
-    })
-    // and the UV index
-    //an icon representation of weather conditions,
 
-   
+      
+            })
+
+
+        })  
     }
-
-
-      
-    
-
-  
-
-
-
-
-
-
 
 })
