@@ -44,7 +44,8 @@ $(document).ready(function() {
       console.log(uvLat);
       console.log(uvLon);
       let queryURLUV = "https://api.openweathermap.org/data/2.5/uvi?lat=" + uvLat + "&lon=" + uvLon + "&appid=87665d60f93b269a6c1aa2b881ea7347";
-     
+      
+
       $.ajax({
         url: queryURLUV,
         method: "GET"
@@ -67,7 +68,7 @@ $(document).ready(function() {
         $("#uvIndicator").text("Severe UV");
         $("#uvIndicator").css("background-color", "red")
       }
-    })
+    
 
       let queryURLDaily = "https://api.openweathermap.org/data/2.5/onecall?lat=" + uvLat + "&lon=" + uvLon + "&exclude=current,minutely,hourly,alerts&appid=87665d60f93b269a6c1aa2b881ea7347";
      
@@ -80,40 +81,44 @@ $(document).ready(function() {
       let day1Milli = unixTSDay1 * 1000;
       let day1DateObj = new Date(day1Milli);
       let hmnDay1 = day1DateObj.toDateString();
+      let day1Temp = response.daily[1].temp.day;
+      let day1TempToF = (day1Temp - 273.15) * 1.80 + 32;
+      let day1Humidity = response.daily[1].humidity;
+      console.log(day1Humidity)
       
-      let unixTSDay2 = response.daily[2].dt;
-      let day2Milli = unixTSDay2 * 1000;
-      let day2DateObj = new Date(day2Milli);
-      let hmnDay2 = day2DateObj.toDateString();
+      //let unixTSDay2 = response.daily[2].dt;
+      //let day2Milli = unixTSDay2 * 1000;
+      //let day2DateObj = new Date(day2Milli);
+     // let hmnDay2 = day2DateObj.toDateString();
+     // let day2Temp = response.daily[2].temp;
 
-      let unixTSDay3 = response.daily[3].dt;
-      let day3Milli = unixTSDay3 * 1000;
-      let day3DateObj = new Date(day3Milli);
-      let hmnDay3 = day3DateObj.toDateString();
+      //let unixTSDay3 = response.daily[3].dt;
+      //let day3Milli = unixTSDay3 * 1000;
+      //let day3DateObj = new Date(day3Milli);
+      //let hmnDay3 = day3DateObj.toDateString();
+      //let day3Temp = response.daily[3].temp;
 
-      let unixTSDay4 = response.daily[4].dt;
-      let day4Milli = unixTSDay4 * 1000;
-      let day4DateObj = new Date(day4Milli);
-      let hmnDay4 = day4DateObj.toDateString();
+      //let unixTSDay4 = response.daily[4].dt;
+      //let day4Milli = unixTSDay4 * 1000;
+      //let day4DateObj = new Date(day4Milli);
+      //let hmnDay4 = day4DateObj.toDateString();
+      //let day4Temp = response.daily[4].temp;
 
-      let unixTSDay5 = response.daily[5].dt;
-      let day5Milli = unixTSDay5 * 1000;
-      let day5DateObj = new Date(day5Milli);
-      let hmnDay5 = day5DateObj.toDateString();
+      //let unixTSDay5 = response.daily[5].dt;
+      //let day5Milli = unixTSDay5 * 1000;
+      //let day5DateObj = new Date(day5Milli);
+      //let hmnDay5 = day5DateObj.toDateString();
+      //let day5Temp = response.daily[5].temp;
       
-      $("#dayOne").text(hmnDay1  );
-      $("#dayTwo").text(hmnDay2  );
-      $("#dayThree").text(hmnDay3 );
-      $("#dayFour").text(hmnDay4 ); 
-      $("#dayFive").text(hmnDay5 );
-
-//an icon representation of weather conditions, the temperature, and the humidity
-        })
-
-
-     
-        
-        //Final CLosing Brackets
-        })  
+      $("#dayOne").text("Date: " + hmnDay1 + " Temp: " + day1TempToF.toFixed(0) + " Humidity: " + day1Humidity);
+      //$("#dayTwo").text(hmnDay2 + );
+      //$("#dayThree").text(hmnDay3 + );
+      //$("#dayFour").text(hmnDay4 + ); 
+      //$("#dayFive").text(hmnDay5 + );
+                
+//DO NOT CHANGE BRACKETS BELOW!!!!      
+                })  
+            })
+        })        
     }
 })
