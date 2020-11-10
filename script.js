@@ -2,11 +2,13 @@ $(document).ready(function() {
   //moment.js time info 
     console.log(moment().format());
     console.log(moment().hours());
-    //retrieving the last searched city from local storage
+    //retrieving the last searched city from local storage, adding it back to the cities list, rerunning the last search.
     function getFromLocalStorage() {
         let lastSearched = JSON.parse(window.localStorage.getItem("citySearched"));
         $(':input').removeAttr('placeholder');
         $("#searchText").val(lastSearched);
+        $("#citiesList").append('<li style="text-align: center;" class="list-group-item">' + lastSearched + "</li>");
+        getWeather();
     }
     getFromLocalStorage()
     //click listener for the getWeather function
