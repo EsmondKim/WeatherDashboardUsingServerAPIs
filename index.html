@@ -15,7 +15,7 @@
     />
 </head>
 <body style="background-color: rgb(215, 207, 187)">
-
+    <!--Header with weather icons.-->
     <div class="row">
     <nav class="col-xl-12 col-md-12 col-xs-12">
         <header style="background-color: rgb(7, 61, 186)">    
@@ -27,101 +27,81 @@
         </header>
     </nav>
     </div>
-
+    <!--Starting the container for weather dashboard content.-->
     <div class="container">  
-        
-        <div class="row">
-            <div class="col-xl-12 col-md-12 col-xs-12">  
-                <br> 
-            </div>
-        </div>
-        
+        <!--Search box area and row.-->
         <div class="row">
             <div class="col-xl-5 col-md-5 col-xs-5 aside">
-                <br>
-                <div class="row">
-                    <div style="float: center; width: 18rem;" class="col-xl-5 col-md-5 col-xs-5">
-                        <section role="search">
-                            <i id="btn" class="fas fa-search"></i>
-                            <input id="searchText" class="search" type="text" placeholder="Search for a City" >   
-                        </section>      
-                 <br>
-                  
+                <br>   
+        <!--Search box.-->
+        <div style="float: center; width: 18rem;" class="col-xl-4 col-md-4 col-xs-4">
+            <section role="search">
+                <i id="btn" class="fas fa-search"></i>
+                <input id="searchText" class="search" type="text" placeholder="Search for a City" >   
+            </section>     
+            <br>
+        <!--Card for List of cities.-->
             <ul style="float: center; width: 24rem;" id="citiesList" class="list-group list-group-flush">
                 <li style="text-align: center;" class="list-group-item">Austin</li>
                 <li style="text-align: center;" class="list-group-item">Boston</li>
                 <li style="text-align: center;" class="list-group-item">Minneapolis</li>
             </ul>
             <br>
-                    </div>
-                </div>    
+                </div>
             </div>
-        </div>
-
+        </div>            
+    
+        <!--Blank row for spacing.-->
         <div class="row">
             <div class="col-xl-12 col-md-12 col-xs-12">  
                 <br> 
             </div>
         </div>
-
-        <div class="section row" style="float: center;">
-            <div class="col-xl-12 col-md-6 col-xs-6">
-                <div class="row">   
-                    <div class="card col-xl-2 col-md-2 col-xs-2" style="width: 18rem;">
-                        <div id="cityName" class="card-header" style="background-color: rgb(170, 132, 57)">
-                        Search For A City Using The Search Form
-                        </div>
-                          <ul class="list-group list-group-flush">
-                            <li style="text-align: center;" id="cityTime" class="list-group-item">Time</li>
-                            <li style="text-align: center;" id="cityTemp" class="list-group-item">Temp</li>
-                            <li style="text-align: center;" id="cityHumidity" class="list-group-item">Humidity</li>
-                            <li style="text-align: center;" id="cityWind" class="list-group-item">Wind Speed</li>
-                          </ul>
-
-                          <div style="float: center; background-color: rgb(170, 132, 57)" class="card" style="width: 18rem;">
-                            <div class="card-header">
-                              UV Index
-                            </div>
-                            <ul class="list-group list-group-flush">
-                              <li style="text-align: center;" id="uvIndicator" class="list-group-item">UV Index Conditions</li>
-                            </ul>
-                          </div>
-                        </div>
-
-                        <div class="row">
-                            <div style="width: 4rem" class="col-xl-2 col-md-2 col-xs-2">  
-                                <p></p>
-                                <br>
-                                <p></p>
-                            </div>
-                        </div>
-
-                          <div class="row">   
-                            <div class="card col-xl-8 col-md-6 col-xs-6" style="width: 58rem; float: center;">
-                                <div class="card-header" style="float: right; background-color: rgb(170, 132, 57)">
-                                    Five Day Forecast
-                                </div>
-                                <ul class="list-group list-group-flush">
-                                <li style="text-align: center" id="dayOne" class="list-group-item">Future Forecast</li> 
-                                <li style="text-align: center" id="dayTwo" class="list-group-item">Future Forecast</li>
-                                <li style="text-align: center" id="dayThree" class="list-group-item">Future Forecast</li>
-                                <li style="text-align: center" id="dayFour" class="list-group-item">Future Forecast</li>
-                                <li style="text-align: center" id="dayFive" class="list-group-item">Future Forecast</li>
-                                </ul>
-                            </div>
-                          </div>
-                        
-
-                   
+        <!--Div for Weather Dashboard and Five Day Forecast.-->
+        <div class="row section">
+                <!--Column for current weather results and UV.--> 
+                <div class="col-xl-2 col-md-6 col-xs-6">
+                    <div id="cityName" class="card-header" style="background-color: rgb(170, 132, 57); 6rem; float: center;">
+                    Search For A City Using The Search Form </div>
+                    <ul class="list-group list-group-flush">
+                        <li style="text-align: center;" id="cityIcons" class="list-group-item">Current Conditions</li>
+                        <li style="text-align: center;" id="cityTime" class="list-group-item">Time</li>
+                        <li style="text-align: center;" id="cityTemp" class="list-group-item">Temp</li>
+                        <li style="text-align: center;" id="cityHumidity" class="list-group-item">Humidity</li>
+                        <li style="text-align: center;" id="cityWind" class="list-group-item">Wind Speed</li>
+                    </ul>
+                    
+                    <!--UV index results.-->
+                    <div style="background-color: rgb(170, 132, 57); 6rem;" class="card">
+                    <div class="card-header">
+                    UV Index    
+                        <ul class="list-group list-group-flush">
+                        <li style="text-align: center;" id="uvIndicator" class="list-group-item">UV Index Conditions</li>
+                        </ul>
+                    </div>
+                    </div>
                 </div>
-            </div>
-        </div> 
-
-        
-
-
-
-
+                <!--Blank column for spacing.-->
+                <div class="col-xl-1 col-md-6 col-xs-6">
+                    <p></p>
+                </div>
+                <!--Five day forecast area.-->
+                <div class="row">   
+                    <div class="card col-xl-8 col-md-6 col-xs-6" style="width: 48rem; float: center;">
+                        <div class="card-header" style="background-color: rgb(170, 132, 57);">
+                        Five Day Forecast
+                        </div>
+                            <ul class="list-group list-group-flush">
+                            <li style="text-align: center" id="dayOne" class="list-group-item">Future Forecast</li>   
+                            <li style="text-align: center" id="dayTwo" class="list-group-item">Future Forecast</li>
+                            <li style="text-align: center" id="dayThree" class="list-group-item">Future Forecast</li>
+                            <li style="text-align: center" id="dayFour" class="list-group-item">Future Forecast</li>
+                            <li style="text-align: center" id="dayFive" class="list-group-item">Future Forecast</li>
+                            </ul>
+                        </div>                                           
+                    </div>
+                </div>
+    <!--Closing the container div.-->
     </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
