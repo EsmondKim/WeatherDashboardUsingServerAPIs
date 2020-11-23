@@ -1,8 +1,12 @@
 # WeatherDashboardUsingServerAPIs
 
-This is weather app that gives users the current weather and UV Index conditions as well as a five day forecast.
+This site solves the problem of weather uncertainty for users by providing forecasts for searched cities.  The weather dashbord gives users the current weather and UV Index conditions as well as a five day forecast.
+
 The site utilizes a weather API to provide real time information.
-Users can search for cities, and the code automatically takes the search value and adds it to the API's queryURL.
+Users can search for cities, and the code automatically takes the search value and adds it to the API's queryURL. 
+Then, the code displays current conditions, UV conditions, a five day forecast, and icons to accompany the daily forecast, when available from the API. During sessions, searched cities are added to the list.  Users can click the city names to search that city's forecast again.
+
+To use the website, open it, and click a city name on the list.  Or, type the name of the city that you would like to search in the search box and either hit enter on your keyboard or click the search icon. 
 
 Deployed website:
 [Here is a link to the deployed website](https://esmondkim.github.io/WeatherDashboardUsingServerAPIs/) 
